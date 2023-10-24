@@ -70,7 +70,7 @@ POWERLEVEL9K_CONTEXT_DEFAULT_BACKGROUND="235"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git python rust macos autojump zsh-syntax-highlighting pip git-flow git-flow-completion zsh-autosuggestions wd docker zsh-syntax-highlighting z brew terraform wakatime)
+plugins=(git python rust macos autojump zsh-syntax-highlighting pip git-flow git-flow-completion zsh-autosuggestions wd docker zsh-syntax-highlighting z brew terraform wakatime kube-ps1)
 BULLETTRAIN_PROMPT_ORDER=(
   virtualenv
   context
@@ -78,6 +78,7 @@ BULLETTRAIN_PROMPT_ORDER=(
   #time
   git
 )
+PROMPT='$(kube_ps1)'$PROMPT
 BULLETTRAIN_GIT_BG='green'
 source $ZSH/oh-my-zsh.sh
 # User configuration
@@ -184,3 +185,4 @@ eval $(opam env)
 export JAVA_HOME=/usr/lib/jvm/java-17-openjdk
 export PATH=$JAVA_HOME/bin:$PATH
 export LANG=en_US.UTF-8
+source /home/manjusaka/.config/op/plugins.sh
