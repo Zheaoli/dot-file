@@ -1,0 +1,45 @@
+[user]
+	name = Manjusaka
+	email = me@manjusaka.me
+	signingKey = 878F445D9C6CE65E
+[url "git@gitlab.imetro.io:"]
+        insteadOf = https://gitlab.imetro.io/
+[url "gogs@git.investsavior.com:"]
+        insteadOf = https://git.investsavior.com/
+[url "git@gitee.com:"]
+  insteadOf = https://gitee.com/
+
+[url "git@github.com:DeBankDeFi/"]
+  insteadOf = https://github.com/DeBankDeFi/
+[core]
+  autocrlf = input
+  editor = "nvim -u /Users/manjusaka/.local/share/lunarvim/lvim/init.lua"
+	excludesfile = /Users/manjusaka/.gitignore_global
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[commit]
+	gpgsign = true
+[pull]
+	rebase = true
+[gpg]
+	program = /usr/bin/gpg
+[diff]
+	external = difft
+  tool = difftastic
+
+[difftool]
+  prompt = false
+
+[difftool "difftastic"]
+  cmd = difft "$LOCAL" "$REMOTE"
+[pager]
+  difftool = true
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
