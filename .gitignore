@@ -2,6 +2,7 @@
 __pycache__/
 *.py[cod]
 *$py.class
+watch_later/
 
 # C extensions
 *.so
