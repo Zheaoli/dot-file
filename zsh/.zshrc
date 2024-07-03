@@ -117,7 +117,7 @@ export GOROOT=/usr/lib/go
 export GOBIN=$GOROOT/bin
 export PYENV_VIRTUALENV_DISABLE_PROMPT=1
 export GO111MODULE=auto
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+source <(fzf --zsh)
 export KUBECONFIG=/Users/manjusaka/kbectl.config
 alias ls="exa -l --git -G --color-scale -h -a --group-directories-first"
 alias jumpserver="ssh blj.elenet.me -l zheao.li"
