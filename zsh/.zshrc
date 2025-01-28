@@ -125,7 +125,7 @@ export PATH=/data/soft/gradle-4.9/bin:/data/soft/maven/bin:$HOME/.cargo/bin:$PAT
 
 #export IDEA_JDK=$JAVA_HOME
 alias ctags='/usr/local/bin/ctags'
-export GOPRIVATE="gitee.com/metron"
+export GOPRIVATE="gitee.com/metron,github.com/DeBankDeFi,github.com/Chaintable"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 #[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
@@ -147,7 +147,7 @@ alias k=kubectl
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 #eval "$(starship init zsh)"
 #alias docker="lima sudo nerdctl"
-export GONOSUMDB=github.com/DeBankDeFi/*
+export GONOSUMDB="github.com/DeBankDeFi/*,github.com/Chaintable/*"
 export HISTSIZE=1000000
 export SAVEHIST=1000000
 setopt EXTENDED_HISTORY
@@ -176,7 +176,6 @@ eval "$(pyenv virtualenv-init -)"
 export GPG_TTY=$(tty)
 export JAVA_HOME=/usr/lib/jvm/jdk-17/
 export PATH=$PATH:$JAVA_HOME/bin
-alias vim=nvim
 eval $(opam env)
 # pnpm end
 
@@ -185,4 +184,7 @@ eval $(opam env)
 export JAVA_HOME=/usr/lib/jvm/java-17-openjdk
 export PATH=$JAVA_HOME/bin:$PATH
 export LANG=en_US.UTF-8
+export PATH=$PATH:/opt/clang/latest/bin
 source /home/manjusaka/.config/op/plugins.sh
+source /opt/asdf-vm/asdf.sh
+export BROWSER=google-chrome-stable

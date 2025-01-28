@@ -11,6 +11,10 @@
 
 [url "git@github.com:DeBankDeFi/"]
   insteadOf = https://github.com/DeBankDeFi/
+[url "git@github.com:Chaintable/"]
+  insteadOf = https://github.com/Chaintable/
+[url "git@github.com:Chaintable/"]
+  insteadOf = https://www.github.com/Chaintable/
 [core]
   autocrlf = input
   editor = "nvim -u /Users/manjusaka/.local/share/lunarvim/lvim/init.lua"
@@ -43,3 +47,9 @@
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
+[credential "https://github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
