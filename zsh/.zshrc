@@ -1,6 +1,9 @@
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block, everything else may go below.
+if [[ "$ARGV0" == "/opt/cursor-bin/cursor-bin.AppImage" ]]; then
+  unset ARGV0
+fi
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
@@ -161,8 +164,6 @@ setopt EXTENDED_HISTORY
 #bindkey '^[OA' _atuin_search_widget
 
 # pnpm
-export PNPM_HOME="/Users/manjusaka/Library/pnpm"
-export PATH="$PNPM_HOME:$PATH"
 export PATH="/snap/bin:$PATH"
 export PATH=$PATH:/usr/local/go/bin:/usr/local/zig
 [[ /usr/local/bin/kubectl ]] && source <(kubectl completion zsh)
@@ -186,5 +187,16 @@ export PATH=$JAVA_HOME/bin:$PATH
 export LANG=en_US.UTF-8
 export PATH=$PATH:/opt/clang/latest/bin
 source /home/manjusaka/.config/op/plugins.sh
-source /opt/asdf-vm/asdf.sh
 export BROWSER=google-chrome-stable
+export ASDF_DATA_DIR=$HOME/.asdf
+export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
+export XDG_DATA_DIRS=/usr/share:/usr/local/share:$XDG_DATA_DIRS
+export __NV_DISABLE_EXPLICIT_SYNC=1
+if [[ $TERM == "wezterm" ]]; then
+  TERM="xterm-256color" # <-- Specifically this is what did the trick
+fi
+export EDITOR=nvim
+# zkstack completion
+autoload -Uz compinit
+compinit
+source "/home/manjusaka/.zsh/completion/_zkstack.zsh"

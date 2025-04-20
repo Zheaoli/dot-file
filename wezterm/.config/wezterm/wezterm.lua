@@ -57,4 +57,6 @@ return {
 			action = wezterm.action.SplitVertical,
 		},
 	},
+	enable_wayland = true,
+	term = "xterm-256color",
 }
